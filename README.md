@@ -92,15 +92,22 @@ Assim, na atualização dos pesos, é calculada a diferença entre o valor atual
 - [1xDout] = [1Din]x[DinxDout]+[1xDout]
 - o w ou [DinxDout] com a mesma dimensão da entrada e mesmo número de colunas da saída;
 - Ex. Numa rede com 3 entradas, duas camadas escondidas com 4 neurônios cada e uma saída teremos:
+
 [1Din]x[DinxDout]+[1xDout] = [1xDout] #y
+
 [1x3] * [3x4] + [1x4] = [1x4] # primeira camada
+
 [1x4] * [4x4] + [1x4] = [1x4] # segunda camada
+
 [1x4] * [4x1] + [1x1] = [1x1] # saída
 
 Neste exemplo teremos 41 parâmetros, que é o número total de pesos + bias
 [3x4] + [1x4] = 16
+
 [4x4] + [1x4] = 20
+
 [4x1] + [1x1] = 5
+
 16 + 20 + 5 = 41
 
 ### Funções de custo:
