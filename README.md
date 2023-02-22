@@ -1,4 +1,4 @@
-# Notas Curso Deep Learninig @ Arnaldo Gualberto
+# Notas Curso Manual Prático do Deep Learninig @ Arnaldo Gualberto
 
 ### Perceptron:
 - Modelo mais básico de NN
@@ -121,3 +121,8 @@ Neste exemplo teremos 41 parâmetros, que é o número total de pesos + bias
 - Em regressão: O número de neurônios da ultima camada é igual ao número de output, a função de ativação é linear, e as funções de custo podem ser MSE, MAE, SSE...
 - Em class. binária: O número de neurônios na ultima camada é 1 (classe predita), a função de ativação é sigmoid, e a função de custo é cross entropy
 - Em class. multiclasse: O número de neurônios da ultima camada é igual ao número de classes do problema, a função de ativação é linear, e afunção de custo é softmax + neg. log-likelihood. OBS: Alguns frameworks colocam a softmax como função de ativação, então só usamos a neg log likelihood como função de custo.
+
+
+
+# Referência
+- Manual Prático do Deep Learninig <https://www.udemy.com/course/redes-neurais/>
