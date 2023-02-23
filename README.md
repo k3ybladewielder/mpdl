@@ -53,7 +53,7 @@ Algumas funções são:
 - Derivada: "Força que aplica em cada entrada pra aumentar a saída.", "É uma forma inteligente de saber como deve alterar as entradas pra levemente aumentar a sua saída"
 - A derivada é calculada sobre cada entrada;
 - Gradiente: Vetor de derivadas das duas entradas. Ou seja, todas as derivadsa sobre as entradas concatenadas.
-- Gradiente numérico: é usado quando nao sabemos calcular a derivada de alguma função.
+- Gradiente numérico: é usado quando nao sabemos calcular a derivada de alguma função. Gradiente numérico em relação a x: $df(x, y)/dx = f(x + h, y) - f(x, y)/h$. Derivada em relação a y: $df(x, y)/dx = f(x, y + h) - f(x, y)/h$ 
 - Gradiente analítico: é usado quando sabemos calcular a derivada de alguma função.
 - Ex.: No exemplo dado, a derivada de x foi 3 e a de y foi -2. A força pura da do x foi maior e o sinal positivo indica que alterando o valor do x pelo passo h a saída se torna maior. O inverso acontece com y, já que é negativo, alterando o valor do y pelo passo h o valor se torna menor (nesse exemplo queremos maior).
 - A derivada em relação a alguma entrada por ser calculada ajustado levemente aquela entrada e observando a mudança no valor da saída.
