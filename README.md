@@ -125,4 +125,6 @@ Neste exemplo teremos 41 parâmetros, que é o número total de pesos + bias
 
 
 # Referência
-- Manual Prático do Deep Learninig <https://www.udemy.com/course/redes-neurais/>
+- Material Manual Prático do Deep Learninig <https://github.com/arnaldog12/Manual-Pratico-Deep-Learning>
+- Curso Manual Prático do Deep Learninig <https://www.udemy.com/course/redes-neurais/>
+- Slides Manual Prático do Deep Learninig <https://www.icloud.com/keynote/0LZvPsaugs7uCqr4TS-keRh-g#Manual>
