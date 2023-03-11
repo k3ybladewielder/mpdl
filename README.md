@@ -122,6 +122,15 @@ Neste exemplo teremos 41 parâmetros, que é o número total de pesos + bias
 - Em class. binária: O número de neurônios na ultima camada é 1 (classe predita), a função de ativação é sigmoid, e a função de custo é cross entropy
 - Em class. multiclasse: O número de neurônios da ultima camada é igual ao número de classes do problema, a função de ativação é linear, e afunção de custo é softmax + neg. log-likelihood. OBS: Alguns frameworks colocam a softmax como função de ativação, então só usamos a neg log likelihood como função de custo.
 
+### Inicialização dos Pesos:
+- Zeros: Inicia todos os pesos com valor zero. O uso não é recomendado porquê se todos os pesos são iguais, todas as ativações também vão ser iguais. Assim, a rede se torna simétrica e a rede não aprende nada.
+- Ones: Mesmo que Zeros.
+- Uniforme Aleatória: Ajuda a quebrar a simetria, os valores são inicializados entre valores de 0 a 1 com a quase a mesma probabilidade de acontecer.
+- Normal Aleatória: Os pesos tem média zero, com um desvio padrão. Os pesos tem valores diferentes, que ajuda a quebrar a simetria e a rede a aprender.
+- Glorot Uniform: Também chamado de Xavier Uniform, esse método assim como a Uniform Aleatória, os valores vão ter quase a mesma chance de acontecer, mas leva em consideração o número de neurônios das camadas na definição do desvio padrão. Ela ajuda a quebrar a simetria e torna a convergência mais rápida e eficiente.
+- Glorot Normal: Também chamado de Xavier Normal. Também é parecido com a Normal Aleatória mas com as características da glorot. Leva em consideração a quantidade de neurônios/tamanho das camadas, ajuda a quebrar a simetria, torna a convergência mais eficiênte e rápida.
+- As glorot normal e uniform são os métodos de inicialização de pesos mais utilizados.
+
 
 
 # Referência
