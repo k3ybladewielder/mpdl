@@ -1,16 +1,20 @@
 # Notas Curso Manual Prático do Deep Learninig @ Arnaldo Gualberto
 
 ### Perceptron:
-- Modelo mais básico de NN
-- Composta por apenas 1 neurônio
-- N entradas e 1 saída
-- função de ativação step
-- por definição é um classificador binário
-- pode ser adaptado para regressão linear
+- Modelo mais básico de NN.
+- Composta por apenas 1 neurônio.
+- N entradas e 1 saída.
+- Sua função de ativação é a step function. Retorna o ŷ como 1 quando a entrada é positiva, e 0 quando a entrada é nengativa.
+- Por definição é um **classificador binário linear**.
+- Ele pode ser adaptado para regressão linear.
 - Só resolve problemas lineares ou linearmente separáveis
-- Perceptron aprende através da perceptron rule (não gradiente descendente)
-- Aprendizado online (passando amostra por amostra)
-- O perceptron aprende pela atualização dos pesos.
+- Perceptron aprende através da perceptron rule (não gradiente descendente). Ele utiliza um modelo linear simples para separar duas classes de dados através de uma linha de decisão, ajustando os pesos dos dados de entrada até que o modelo possa corretamente classificar a maioria dos exemplos apresentados durante o treinamento.
+- Aprendizado online (passando amostra por amostra).
+- O perceptron aprende pela atualização dos pesos a partir das entradas amostra por amostra.
+
+$$ w_i = w_i + \lambda (y_i - \hat{y}_i) x_i $$
+
+$$ b_i = b_i + \lambda (y_i - \hat{y}_i)  $$
 
 ### Adaline:
 - adaptive linear neuron
