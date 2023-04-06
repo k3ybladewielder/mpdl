@@ -7,7 +7,7 @@
 - função de ativação step
 - por definição é um classificador binário
 - pode ser adaptado para regressão linear
-- Só resolve problema linearmente lineares/linearmente separáveis
+- Só resolve problemas lineares ou linearmente separáveis
 - Perceptron aprende através da perceptron rule (não gradiente descendente)
 - Aprendizado online (passando amostra por amostra)
 - O perceptron aprende pela atualização dos pesos.
