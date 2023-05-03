@@ -1,5 +1,5 @@
 # Notas Curso Manual Prático do Deep Learninig @ Arnaldo Gualberto
-## Conceitos
+## [Conceitos](https://github.com/k3ybladewielder/mpdl/blob/main/conceitos.md)
 ## Notebooks
 - [Intuição sobre o Perceptron](https://github.com/k3ybladewielder/mpdl/blob/main/Perceptron_Intuicao.ipynb)
 - [Perceptron](https://github.com/k3ybladewielder/mpdl/blob/main/Perceptron.ipynb)
