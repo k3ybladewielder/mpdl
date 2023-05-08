@@ -128,6 +128,8 @@ Neste exemplo teremos 41 parâmetros, que é o número total de pesos + bias
 - Em class. binária: O número de neurônios na ultima camada é 1 (classe predita), a função de ativação é sigmoid, e a função de custo é cross entropy
 - Em class. multiclasse: O número de neurônios da ultima camada é igual ao número de classes do problema, a função de ativação é linear, e afunção de custo é softmax + neg. log-likelihood. OBS: Alguns frameworks colocam a softmax como função de ativação, então só usamos a neg log likelihood como função de custo.
 
+<img src="./images/funcoes_custo_ativacao.png">
+
 ### Inicialização dos Pesos:
 - Zeros: Inicia todos os pesos com valor zero. O uso não é recomendado porquê se todos os pesos são iguais, todas as ativações também vão ser iguais. Assim, a rede se torna simétrica e a rede não aprende nada.
 - Ones: Mesmo que Zeros.
