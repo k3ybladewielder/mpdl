@@ -114,6 +114,8 @@ Neste exemplo teremos 41 parâmetros, que é o número total de pesos + bias
 
 16 + 20 + 5 = 41
 
+<img src="./images/dimensoes_matrizes.png">
+
 ### Funções de custo:
 - loss = erro pra amostra
 - cost = erro pro banco, df. somatório das perdas
