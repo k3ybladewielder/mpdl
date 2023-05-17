@@ -139,6 +139,12 @@ Neste exemplo teremos 41 parâmetros, que é o número total de pesos + bias
 - Glorot Normal: Também chamado de Xavier Normal. Também é parecido com a Normal Aleatória mas com as características da glorot. Leva em consideração a quantidade de neurônios/tamanho das camadas, ajuda a quebrar a simetria, torna a convergência mais eficiênte e rápida.
 - As glorot normal e uniform são os métodos de inicialização de pesos mais utilizados.
 
+### Regularização
+- Regularização L1: Cria uma rede menor capaz de resolver o problema; Tende a criar soluções esparsas (zeros); Faz seleção das features mais importantes; Pode ser difícial de estimar; **É aplicáda em casos de overfitting**.
+- Regularização L2:  A ideia é criar uma rede onde nenhum atributo seja tão mais importante que os outros; Tende a diminuir e espalhar os valores dos pesos; É mais utilizada que a regularização L1; Também é chamada de weight decay; Pode ser difícil de estimar; Aplique em caso de overfitting.
+- Dropout: Zera aleatoriamente a ativação de alguns neurônios em cada camada por uma probabilidade p; A ideia é treinar várias redes menores que aprendam a resolver problema com diferentes informações; **Reescale as ativações restantes restantes por 1/p**; Mais fácil de estimar; É uma das melhores técnicas de regularização; Não aplique na validação/teste!; Aplique em caso de overfitting
+- Batch Normalization: Normaliza as entradas ou saídas das funções de ativação; Estima a média e o desvio-padrão da população baseada no batch (média móvel); Regulariza camadas ao invés de neurônios; Pode substituir a dropout; É uma das melhores técnicas de regularização; Cuidado na validação e teste!; Cuidado no gradient checking!
+- Early Stoping: Para o treinamento quando a perda na validação deixa de diminuir (dada uma certa paciência); Evita o overfitting (mas pode ocorrer underfitting)
 
 
 # Referência
