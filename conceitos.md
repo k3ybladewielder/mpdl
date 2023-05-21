@@ -165,6 +165,21 @@ O Mini-batch GD é uma combinação dos métodos SGD e Batch GD. Nesse método, 
 
 Em resumo, o Stochastic Gradient Descent (SGD) usa um único exemplo de treinamento por iteração, o Mini-batch Gradient Descent usa um pequeno grupo de exemplos (mini-batch), e o Batch Gradient Descent usa o conjunto completo de dados de treinamento. Cada método tem suas vantagens e desvantagens em termos de eficiência computacional, estabilidade e velocidade de convergência, e a escolha do método depende das características do problema e dos recursos computacionais disponíveis. O Mini-batch GD é geralmente o mais amplamente utilizado na prática, pois oferece um bom equilíbrio entre eficiência e estabilidade.
 
+### Learning Rate Decay
+Learning rate decay, também conhecido como taxa de aprendizado decrescente, é uma técnica utilizada em algoritmos de otimização, como o Gradiente Descendente, para reduzir gradualmente a taxa de aprendizado durante o treinamento de um modelo de machine learning. 
+
+A taxa de aprendizado é um hiperparâmetro que controla o tamanho dos passos que o algoritmo de otimização dá em direção ao mínimo global da função de perda. Uma taxa de aprendizado muito alta pode fazer com que o algoritmo salte sobre o mínimo global, enquanto uma taxa de aprendizado muito baixa pode fazer com que o algoritmo leve muito tempo para convergir ou fique preso em mínimos locais.
+
+O objetivo do learning rate decay é reduzir gradualmente a taxa de aprendizado ao longo do tempo, permitindo que o algoritmo dê passos maiores no início do treinamento, quando os gradientes são geralmente maiores, e passos menores à medida que o treinamento progride e os gradientes diminuem. Isso ajuda a encontrar uma região mais precisa do mínimo global.
+
+Existem várias estratégias de decaimento da taxa de aprendizado, sendo as mais comuns:
+
+1. Decay linear: a taxa de aprendizado é reduzida linearmente em cada época ou após um determinado número de iterações.
+2. Decay exponencial: a taxa de aprendizado é reduzida exponencialmente ao longo do tempo.
+3. Decay por etapas (step decay): a taxa de aprendizado é reduzida em uma proporção fixa em momentos pré-definidos durante o treinamento.
+
+O learning rate decay é uma técnica importante para ajudar no treinamento eficiente de modelos de machine learning, garantindo uma convergência mais estável e melhorando o desempenho geral do modelo.
+
 # Referência
 - Material Manual Prático do Deep Learninig <https://github.com/arnaldog12/Manual-Pratico-Deep-Learning>
 - Curso Manual Prático do Deep Learninig <https://www.udemy.com/course/redes-neurais/>
