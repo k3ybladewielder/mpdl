@@ -145,6 +145,7 @@ Neste exemplo teremos 41 parâmetros, que é o número total de pesos + bias
 - Dropout: Zera aleatoriamente a ativação de alguns neurônios em cada camada por uma probabilidade p; A ideia é treinar várias redes menores que aprendam a resolver problema com diferentes informações; **Reescale as ativações restantes restantes por 1/p**; Mais fácil de estimar; É uma das melhores técnicas de regularização; Não aplique na validação/teste!; Aplique em caso de overfitting
 - Batch Normalization: Normaliza as entradas ou saídas das funções de ativação; Estima a média e o desvio-padrão da população baseada no batch (média móvel); Regulariza camadas ao invés de neurônios; Pode substituir a dropout; É uma das melhores técnicas de regularização; Cuidado na validação e teste!; Cuidado no gradient checking!
 - Early Stoping: Para o treinamento quando a perda na validação deixa de diminuir (dada uma certa paciência); Evita o overfitting (mas pode ocorrer underfitting)
+- Momentum: Adiciona velocidade ao gradiente descendente; Soma o gradiente da iteração anterior multiplicado por fator de momentum; **Torna a convergência mais rápida**
 
 
 # Referência
