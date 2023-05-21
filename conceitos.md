@@ -174,7 +174,7 @@ O objetivo do learning rate decay é reduzir gradualmente a taxa de aprendizado 
 
 Existem várias estratégias de decaimento da taxa de aprendizado, sendo as mais comuns:
 
-1. Decay linear: a taxa de aprendizado é reduzida linearmente em cada época ou após um determinado número de iterações.
+1. Decay linear ou time-based: a taxa de aprendizado é reduzida linearmente em cada época ou após um determinado número de iterações.
 2. Decay exponencial: a taxa de aprendizado é reduzida exponencialmente ao longo do tempo.
 3. Decay por etapas (step decay): a taxa de aprendizado é reduzida em uma proporção fixa em momentos pré-definidos durante o treinamento.
 
