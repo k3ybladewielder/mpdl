@@ -145,8 +145,25 @@ Neste exemplo teremos 41 parâmetros, que é o número total de pesos + bias
 - Dropout: Zera aleatoriamente a ativação de alguns neurônios em cada camada por uma probabilidade p; A ideia é treinar várias redes menores que aprendam a resolver problema com diferentes informações; **Reescale as ativações restantes restantes por 1/p**; Mais fácil de estimar; É uma das melhores técnicas de regularização; Não aplique na validação/teste!; Aplique em caso de overfitting
 - Batch Normalization: Normaliza as entradas ou saídas das funções de ativação; Estima a média e o desvio-padrão da população baseada no batch (média móvel); Regulariza camadas ao invés de neurônios; Pode substituir a dropout; É uma das melhores técnicas de regularização; Cuidado na validação e teste!; Cuidado no gradient checking!
 - Early Stoping: Para o treinamento quando a perda na validação deixa de diminuir (dada uma certa paciência); Evita o overfitting (mas pode ocorrer underfitting)
-- Momentum: Adiciona velocidade ao gradiente descendente; Soma o gradiente da iteração anterior multiplicado por fator de momentum; **Torna a convergência mais rápida**
 
+### Outras Técnicas
+- Momentum: Adiciona velocidade ao gradiente descendente; Soma o gradiente da iteração anterior multiplicado por fator de momentum; **Torna a convergência mais rápida**
+- Mini-batch: Divide o treinamento em conjuntos menores; É importante dar **shuffle antes de cada epoch**; 1 epoch = processar todos os batchs; **Em geral, é a estratégia de GD mais utilizada**
+- Freezing: Congela os pesos de certas camadas **no treinamento**; Muito usada para fazer **transferência de conhecimento** e **fine-tuning**; Aplique em **redes pré-treinadas**.
+
+### Gradiente Descendente (GD)
+Existem diferentes métodos de gradiente descendente (GD) usados no treinamento de redes neurais, sendo os principais o Stochastic Gradient Descent (SGD), o Mini-batch Gradient Descent e o Batch Gradient Descent (ou simplesmente Batch GD). A principal diferença entre eles está na quantidade de exemplos de treinamento usados para calcular o gradiente em cada iteração.
+
+1. Stochastic Gradient Descent (SGD):
+O SGD é o método mais simples e rápido entre os três. Nesse método, em cada iteração, **um único exemplo de treinamento** é selecionado aleatoriamente do conjunto de dados e usado para calcular o gradiente e atualizar os pesos da rede neural. Em seguida, outro exemplo é selecionado aleatoriamente e o processo é repetido até que todos os exemplos tenham sido usados uma vez (uma época). O SGD é eficiente em termos computacionais, mas pode ser instável devido à alta variância nos gradientes calculados com base em um único exemplo, o que pode levar a uma convergência irregular e a oscilações em torno do mínimo global.
+
+2. Batch Gradient Descent:
+O Batch GD é o método mais simples, **mas também o mais computacionalmente caro**. Nesse método, o conjunto completo de dados de treinamento é usado para calcular o gradiente e atualizar os pesos da rede neural em cada iteração. Isso significa que **o gradiente é calculado com base em todos os exemplos de treinamento de uma só vez**. O Batch GD oferece uma convergência estável e regular, mas é computacionalmente intensivo, especialmente quando se lida com grandes conjuntos de dados. Ele pode ser usado quando o conjunto de dados cabe na memória e não é necessário lidar com problemas de eficiência computacional.
+
+3. Mini-batch Gradient Descent:
+O Mini-batch GD é uma combinação dos métodos SGD e Batch GD. Nesse método, **em cada iteração, um pequeno grupo ou lote (mini-batch) de exemplos de treinamento é selecionado aleatoriamente do conjunto de dados**. O tamanho típico do mini-batch varia de 10 a algumas centenas de exemplos. O gradiente é calculado com base nesse mini-batch e os pesos da rede neural são atualizados. O processo é repetido até que todos os mini-batches tenham sido usados uma vez (uma época). O Mini-batch GD oferece um compromisso entre eficiência computacional (comparado ao Batch GD) e estabilidade (comparado ao SGD). Ele reduz a variância nos gradientes em comparação com o SGD e geralmente converge mais rápido.
+
+Em resumo, o Stochastic Gradient Descent (SGD) usa um único exemplo de treinamento por iteração, o Mini-batch Gradient Descent usa um pequeno grupo de exemplos (mini-batch), e o Batch Gradient Descent usa o conjunto completo de dados de treinamento. Cada método tem suas vantagens e desvantagens em termos de eficiência computacional, estabilidade e velocidade de convergência, e a escolha do método depende das características do problema e dos recursos computacionais disponíveis. O Mini-batch GD é geralmente o mais amplamente utilizado na prática, pois oferece um bom equilíbrio entre eficiência e estabilidade.
 
 # Referência
 - Material Manual Prático do Deep Learninig <https://github.com/arnaldog12/Manual-Pratico-Deep-Learning>
