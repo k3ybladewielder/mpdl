@@ -180,6 +180,67 @@ Existem várias estratégias de decaimento da taxa de aprendizado, sendo as mais
 
 O learning rate decay é uma técnica importante para ajudar no treinamento eficiente de modelos de machine learning, garantindo uma convergência mais estável e melhorando o desempenho geral do modelo.
 
+### Hiperparâmetros - Boas práticas:
+- inicial. de pesos: Glorot/Xavier [Normal ou Uniform]
+- Número de camadas internas: 1 a 3 no geral. 4 Quando for um problema mais complexo. Testar com 5 ou 6 e comparar com 4.
+- Quantidade de Neurônios: Em geral multiplos de 2 ou potencia de 10. Como 8, 10, 16, 20 ou 32. Uma boa prática é colocar na primeira camada um número de neurônios maior que a quantidade de features.
+- Otimizadores: Adam, RMSProp ou Adadelta.
+- Funções de Ativação: ReLU, Leaky ReLu, eLU ou Tanh.
+- Dropout: 0.5, 0.4, 0.3, 0.25. Nunca usar 1.0. Nunca usar na validação, somente no treino. Aplicar em caso de overfitting.
+- Regularização: 1e-1, 1e-2, 1e-3. Aplicar em caso de overfitting.
+- Momentum: 0.9 ou 0.99.
+- Batch size: 8, 16, 32 ou 64. Batches menores costumam funcionar melhor.
+- Epochs: Começar com um valor, como 100, e verificar se convergiu. Em caso de underfitting, multiplicar a quantidade de epochs por x3, x5, x10 até convergir. Ou o contrário, começar com um valor alto e diminuir.
+- Learning Rate: Precisa estimar quando usar SGD. Começa com um valor e verificar se a perda não está descendo ou está crescendo, é preciso diminuir a learning rate, como dividir por 2, 3 ou 10 porquê ela está muito alta. Caso a perda esteja caindo muito devagar, é preciso aumentar, multiplicando ela por 3, 5 ou 10.
+
+<img src="./images/learning_rate.png">
+
+### Transfer learning - Quando usar ?
+Transfer learning é uma técnica de aprendizado de máquina em que um modelo pré-treinado em uma tarefa é reutilizado como ponto de partida para resolver uma tarefa relacionada. É comumente usado quando há uma quantidade limitada de dados disponíveis para treinar um modelo específico, ou quando o treinamento de um modelo do zero seria computacionalmente caro e demorado.
+
+<img src="./images/transfer_learning.png">
+
+Existem várias situações em que o transfer learning pode ser aplicado com sucesso:
+
+1. Dados limitados: Quando você possui uma quantidade limitada de dados para treinar um modelo específico, o transfer learning pode ser usado para aproveitar o conhecimento prévio do modelo pré-treinado. Ao iniciar com um modelo pré-treinado treinado em uma tarefa relacionada, você pode ajustar os pesos do modelo para se adaptar aos seus dados específicos, permitindo que o modelo generalize melhor.
+
+2. Tarefas relacionadas: Se você estiver resolvendo uma tarefa que é semanticamente similar a uma tarefa para a qual um modelo pré-treinado já foi treinado, o transfer learning pode ser aplicado. Por exemplo, se você possui um modelo treinado em uma tarefa de reconhecimento de imagens e deseja resolver um problema de detecção de objetos, o conhecimento adquirido pelo modelo pré-treinado na tarefa de reconhecimento de imagens pode ser transferido e adaptado para o problema de detecção de objetos.
+
+3. Recursos computacionais limitados: Treinar um modelo do zero pode ser computacionalmente caro e exigir uma quantidade significativa de recursos computacionais, como poder de processamento e memória. O transfer learning permite que você aproveite modelos pré-treinados já disponíveis, economizando tempo e recursos.
+
+Ao usar o transfer learning, você geralmente seguirá as seguintes etapas:
+
+1. Escolha um modelo pré-treinado: Selecione um modelo pré-treinado que seja relevante para a tarefa que você está tentando resolver. Existem muitos modelos pré-treinados disponíveis, como VGG, ResNet, Inception, BERT, GPT, entre outros.
+
+2. Remova a camada final: A camada final do modelo pré-treinado, que geralmente é responsável pela classificação da tarefa original, é removida.
+
+3. Adapte o modelo: Adicione uma nova camada final à arquitetura do modelo pré-treinado, que seja apropriada para a sua tarefa específica. Essa nova camada final será treinada com seus dados específicos.
+
+4. Treine o modelo: Ajuste os pesos do modelo adaptado usando os dados disponíveis para a sua tarefa específica. Você pode optar por treinar apenas a nova camada final ou também permitir que algumas camadas anteriores sejam ajustadas.
+
+5. Avalie e ajuste: Avalie o desempenho do modelo adaptado em um conjunto de validação e faça ajustes conforme necessário, como modificar hiperparâmetros ou adicionar regularização.
+
+Em resumo, o transfer learning é útil quando você tem dados limitados, a tarefa é semanticamente similar a uma tarefa pré-treinada e/ou você deseja economizar recursos computacionais. Ele permite aproveitar o conhecimento prévio de modelos pré-treinados, adaptando-os para tarefas específicas e obtendo um desempenho melhor do que treinar um modelo do zero.
+
+### Quando a rede não convergir...
+<img src="./images/rede.png">
+
+### E quando a rede estiver excelente ?
+- Conferir divisão train/val/teste
+- Conferir quantidade de amostras em cada divisão
+- Verificar amostragem. Ex. não repetir pessoas no treino, val e teste no caso de classificação/reconhecimento.
+- Verificar se o problema não é fácil demais
+- Verificar se o resultado não está sendo avaliado num banco desbalanceado.
+
+### Por que as NN não funcionam ?
+- Verificar se os dados são suficientes (Ex. dezena de milhares ou milhões). 
+- Fazer data aumengtation, quando fizer sentido, em caso de poucas amostras. Ex. fotos de gatos faz sentido rotacionar, inverter, trocar cores. Já em fotos de limão não faz sentido trocar as cores, não faz sentido porquê uma pessoa não identificaria. 
+- Verificar inconsistências nas labels.
+- Verificar o range dos dados (idade, altura, salário...).
+- Aplicar somente 1 preprocessamento para treinamento, validação e teste.
+- Verificar balanceamento dos dados.
+
+
 # Referência
 - Material Manual Prático do Deep Learninig <https://github.com/arnaldog12/Manual-Pratico-Deep-Learning>
 - Curso Manual Prático do Deep Learninig <https://www.udemy.com/course/redes-neurais/>
