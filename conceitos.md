@@ -239,6 +239,17 @@ Em resumo, o transfer learning é útil quando você tem dados limitados, a tare
 - Verificar o range dos dados (idade, altura, salário...).
 - Aplicar somente 1 preprocessamento para treinamento, validação e teste.
 - Verificar balanceamento dos dados.
+- Verificar implementação: Usar frameworks como pytorch, keras ou tensorflow. Começar com redes mais básicas. Testar em bancos pequenos, num banco pequeno a acurácia deve ser 100% ou perda 0.
+- Verificar a inicialização de pesos.
+- Verificar se as entradas estão corretas.
+- Verificar ocorrencia de vanishing/exploding. Batch norma previne os dois problemas
+- Verificar histograma de pesos, ver se faz sentido
+- Verificar acurácia/perda
+- Verificar valores do hiperparâmetros
+- Verificar underfitting: perda muito grande no banco de treinamento e validação. Alto viés, alto erro, e baixa variância.
+- Verificar overfitting: sobreajuste aos dados, perda muito baixa no banco de treinamento mas alta no banco de validação. Baixo bias e alta variância.
+- Em casos de overfitting: Aumentar quantidade de dados, diminuir a complexidade do modelo, diminuir o número de features, aumentar a regularização ou testar um novo modelo/arquitetura.
+- Em casos de underfitting: Treinar por mais tempo, aumentar a complexidade do modelo, aumentar o número de features, diminuir a regularização, testar um novo modelo/arquitetura.
 
 
 # Referência
